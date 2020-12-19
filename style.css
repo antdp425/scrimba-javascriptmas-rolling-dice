@@ -1,11 +1,12 @@
 body {
    background-color: #AEB8FE;
    display: flex;
+   justify-content: center;
 }
 
 .dice {
-   width: 100px;
-   height: 100px;
+   width: 90px;
+   height: 90px;
    border-radius: 10px;
    background-color: #EFE5DC;
    margin: 100px;
