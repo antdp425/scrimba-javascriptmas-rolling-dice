@@ -12,18 +12,56 @@ event listeners, Math.random()
 // Write your code here 👇
 
 document.addEventListener("DOMContentLoaded", () => {
-  let dice = document.querySelector(".dice");
-  let currentRoll = 0
-  
-  dice.addEventListener("click", () => {
-     currentRoll = diceRoll()
-  });
+  const dots = document.querySelectorAll(".dot");
+  const dice = document.querySelector(".dice");
+
+  dice.addEventListener("click", () => updateDice(diceRoll()));
+
+  function diceRoll() {
+    return Math.floor(Math.random() * 5 + 1);
+  }
+
+  function updateDice(roll) {
+    dots.forEach((dot) => dot.classList.remove(...dot.classList));
+    switch (roll) {
+      case 6:
+        dots[0].classList.add("dot");
+        dots[2].classList.add("dot");
+        dots[3].classList.add("dot");
+        dots[5].classList.add("dot");
+        dots[6].classList.add("dot");
+        dots[8].classList.add("dot");
+        break;
+      case 5:
+        dots[0].classList.add("dot");
+        dots[2].classList.add("dot");
+        dots[4].classList.add("dot");
+        dots[6].classList.add("dot");
+        dots[8].classList.add("dot");
+        break;
+      case 4:
+        dots[0].classList.add("dot");
+        dots[2].classList.add("dot");
+        dots[6].classList.add("dot");
+        dots[8].classList.add("dot");
+        break;
+      case 3:
+        dots[0].classList.add("dot");
+        dots[4].classList.add("dot");
+        dots[8].classList.add("dot");
+        break;
+      case 2:
+        dots[0].classList.add("dot");
+        dots[8].classList.add("dot");
+        break;
+      case 1:
+        dots[4].classList.add("dot");
+        break;
+      default:
+        break;
+    }
+  }
 });
-
-function diceRoll(){
-   return Math.floor(Math.random() * 5 + 1)
-}
-
 /*
 
 DETAILED INSTRUCTIONS

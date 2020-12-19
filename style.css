@@ -4,18 +4,22 @@ body {
 }
 
 .dice {
-   width: 90px;
-   height: 90px;
+   width: 100px;
+   height: 100px;
    border-radius: 10px;
    background-color: #EFE5DC;
    margin: 100px;
+   display: flex;
+   flex-wrap: wrap;
 }
 
-.dot {
+.dice div {
+   margin: 5px;
    width: 20px;
    height: 20px;
-   border-radius: 15px;
+}
+
+.dot{
    background-color: black;
-   margin: 35px;
-   
+   border-radius: 10px;
 }
