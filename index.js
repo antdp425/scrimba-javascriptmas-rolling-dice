@@ -11,7 +11,18 @@ event listeners, Math.random()
 
 // Write your code here 👇
 
+document.addEventListener("DOMContentLoaded", () => {
+  let dice = document.querySelector(".dice");
+  let currentRoll = 0
+  
+  dice.addEventListener("click", () => {
+     currentRoll = diceRoll()
+  });
+});
 
+function diceRoll(){
+   return Math.floor(Math.random() * 5 + 1)
+}
 
 /*
 
